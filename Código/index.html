@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Estude Aqui - Plataforma educacional com exercícios, resumos e conteúdos completos em todas as matérias.">
+    <meta name="keywords" content="educação, exercícios, estudos, matemática, física, química, português, biologia">
+    <title>Estude Aqui - Plataforma Educacional Completa</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- HEADER -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo" onclick="navigateTo('home')">
+                    <span class="logo-icon">📚</span>
+                    <span class="logo-text">Estude Aqui</span>
+                </div>
+
+                <nav class="nav-desktop">
+                    <a href="#" onclick="navigateTo('home'); return false;">Home</a>
+                    <a href="#" onclick="navigateTo('materias'); return false;">Matérias</a>
+                    <a href="#" onclick="navigateTo('dashboard'); return false;">Dashboard</a>
+                </nav>
+
+                <div class="header-actions">
+                    <button class="btn-user" id="btnUser" onclick="toggleUserMenu()">
+                        <span id="userIcon">👤</span>
+                        <span id="userName">Entrar</span>
+                    </button>
+                    <button class="menu-toggle" id="menuToggle" onclick="toggleMenu()">☰</button>
+                </div>
+            </div>
+
+            <nav class="nav-mobile" id="navMobile">
+                <a href="#" onclick="navigateTo('home'); return false;">Home</a>
+                <a href="#" onclick="navigateTo('materias'); return false;">Matérias</a>
+                <a href="#" onclick="navigateTo('dashboard'); return false;">Dashboard</a>
+                <a href="#" onclick="navigateTo('login'); return false;">Login</a>
+            </nav>
+
+            <div class="user-menu" id="userMenu">
+                <a href="#" onclick="navigateTo('dashboard'); return false;">Meu Dashboard</a>
+                <a href="#" onclick="navigateTo('favoritos'); return false;">Favoritos</a>
+                <a href="#" onclick="logout(); return false;">Sair</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- HOME SCREEN -->
+    <section id="home" class="screen active">
+        <div class="hero">
+            <div class="hero-content">
+                <h1>Aprenda qualquer matéria no seu ritmo</h1>
+                <p>Exercícios resolvidos, resumos e conteúdos completos em um só lugar</p>
+                <div class="hero-buttons">
+                    <button class="btn btn-primary" onclick="navigateTo('materias')">Começar a Estudar</button>
+                    <button class="btn btn-secondary" onclick="navigateTo('materias')">Explorar Matérias</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <section class="section">
+                <h2>📚 Matérias Disponíveis</h2>
+                <div class="cards-grid">
+                    <div class="card" onclick="navigateTo('materia', 'matematica')">
+                        <div class="card-icon">📐</div>
+                        <h3>Matemática</h3>
+                        <p>Frações, Equações, Trigonometria e mais</p>
+                    </div>
+                    <div class="card" onclick="navigateTo('materia', 'portugues')">
+                        <div class="card-icon">📝</div>
+                        <h3>Português</h3>
+                        <p>Gramática, Interpretação e Redação</p>
+                    </div>
+                    <div class="card" onclick="navigateTo('materia', 'fisica')">
+                        <div class="card-icon">⚡</div>
+                        <h3>Física</h3>
+                        <p>Cinemática, Dinâmica e Óptica</p>
+                    </div>
+                    <div class="card" onclick="navigateTo('materia', 'quimica')">
+                        <div class="card-icon">🧪</div>
+                        <h3>Química</h3>
+                        <p>Estequiometria, Reações e Ligações</p>
+                    </div>
+                    <div class="card" onclick="navigateTo('materia', 'biologia')">
+                        <div class="card-icon">🧬</div>
+                        <h3>Biologia</h3>
+                        <p>Genética, Ecologia e Evolução</p>
+                    </div>
+                    <div class="card" onclick="navigateTo('materia', 'historia')">
+                        <div class="card-icon">🏛️</div>
+                        <h3>História</h3>
+                        <p>Brasil, Mundo e Contemporânea</p>
+                    </div>
+                    <div class="card" onclick="navigateTo('materia', 'geografia')">
+                        <div class="card-icon">🌍</div>
+                        <h3>Geografia</h3>
+                        <p>Geopolítica, Clima e Recursos</p>
+                    </div>
+                    <div class="card" onclick="navigateTo('materia', 'redacao')">
+                        <div class="card-icon">✍️</div>
+                        <h3>Redação</h3>
+                        <p>ENEM, Dissertação e Argumentação</p>
+                    </div>
+                    <div class="card" onclick="navigateTo('materia', 'filosofia')">
+                        <div class="card-icon">🤔</div>
+                        <h3>Filosofia</h3>
+                        <p>Ética, Lógica e Pensadores</p>
+                    </div>
+                    <div class="card" onclick="navigateTo('materia', 'sociologia')">
+                        <div class="card-icon">👥</div>
+                        <h3>Sociologia</h3>
+                        <p>Sociedade, Cultura e Instituições</p>
+                    </div>
+                    <div class="card" onclick="navigateTo('materia', 'ingles')">
+                        <div class="card-icon">🌐</div>
+                        <h3>Inglês</h3>
+                        <p>Gramática, Vocabulário e Conversação</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2>⭐ Conteúdos Populares</h2>
+                <div class="popular-list">
+                    <div class="popular-item" onclick="navigateTo('assunto', 'matematica', 'fracoes')">
+                        <span class="popular-icon">📐</span>
+                        <div>
+                            <h4>Exercícios de Frações</h4>
+                            <p>Matemática • 5 exercícios</p>
+                        </div>
+                    </div>
+                    <div class="popular-item" onclick="navigateTo('assunto', 'fisica', 'cinematica')">
+                        <span class="popular-icon">⚡</span>
+                        <div>
+                            <h4>Cinemática - Movimento</h4>
+                            <p>Física • 5 exercícios</p>
+                        </div>
+                    </div>
+                    <div class="popular-item" onclick="navigateTo('assunto', 'quimica', 'estequiometria')">
+                        <span class="popular-icon">🧪</span>
+                        <div>
+                            <h4>Estequiometria Completa</h4>
+                            <p>Química • 5 exercícios</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </section>
+
+    <!-- MATÉRIAS SCREEN -->
+    <section id="materias" class="screen">
+        <div class="container">
+            <h1>📚 Todas as Matérias</h1>
+            <div class="cards-grid">
+                <div class="card" onclick="navigateTo('materia', 'matematica')">
+                    <div class="card-icon">📐</div>
+                    <h3>Matemática</h3>
+                    <p>Frações, Equações, Trigonometria e mais</p>
+                </div>
+                <div class="card" onclick="navigateTo('materia', 'portugues')">
+                    <div class="card-icon">📝</div>
+                    <h3>Português</h3>
+                    <p>Gramática, Interpretação e Redação</p>
+                </div>
+                <div class="card" onclick="navigateTo('materia', 'fisica')">
+                    <div class="card-icon">⚡</div>
+                    <h3>Física</h3>
+                    <p>Cinemática, Dinâmica e Óptica</p>
+                </div>
+                <div class="card" onclick="navigateTo('materia', 'quimica')">
+                    <div class="card-icon">🧪</div>
+                    <h3>Química</h3>
+                    <p>Estequiometria, Reações e Ligações</p>
+                </div>
+                <div class="card" onclick="navigateTo('materia', 'biologia')">
+                    <div class="card-icon">🧬</div>
+                    <h3>Biologia</h3>
+                    <p>Genética, Ecologia e Evolução</p>
+                </div>
+                <div class="card" onclick="navigateTo('materia', 'historia')">
+                    <div class="card-icon">🏛️</div>
+                    <h3>História</h3>
+                    <p>Brasil, Mundo e Contemporânea</p>
+                </div>
+                <div class="card" onclick="navigateTo('materia', 'geografia')">
+                    <div class="card-icon">🌍</div>
+                    <h3>Geografia</h3>
+                    <p>Geopolítica, Clima e Recursos</p>
+                </div>
+                <div class="card" onclick="navigateTo('materia', 'redacao')">
+                    <div class="card-icon">✍️</div>
+                    <h3>Redação</h3>
+                    <p>ENEM, Dissertação e Argumentação</p>
+                </div>
+                <div class="card" onclick="navigateTo('materia', 'filosofia')">
+                    <div class="card-icon">🤔</div>
+                    <h3>Filosofia</h3>
+                    <p>Ética, Lógica e Pensadores</p>
+                </div>
+                <div class="card" onclick="navigateTo('materia', 'sociologia')">
+                    <div class="card-icon">👥</div>
+                    <h3>Sociologia</h3>
+                    <p>Sociedade, Cultura e Instituições</p>
+                </div>
+                <div class="card" onclick="navigateTo('materia', 'ingles')">
+                    <div class="card-icon">🌐</div>
+                    <h3>Inglês</h3>
+                    <p>Gramática, Vocabulário e Conversação</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MATÉRIA SCREEN -->
+    <section id="materia" class="screen">
+        <div class="container">
+            <button class="btn-back" onclick="navigateTo('materias')">← Voltar</button>
+            <h1 id="materiaTitle"></h1>
+            <div id="materiaContent" class="cards-grid"></div>
+        </div>
+    </section>
+
+    <!-- ASSUNTO SCREEN -->
+    <section id="assunto" class="screen">
+        <div class="container">
+            <button class="btn-back" onclick="navigateTo('materias')">← Voltar</button>
+            <h1 id="assuntoTitle"></h1>
+            <div id="assuntoContent"></div>
+        </div>
+    </section>
+
+    <!-- LOGIN SCREEN -->
+    <section id="login" class="screen">
+        <div class="auth-container">
+            <div class="auth-box">
+                <h1>Bem-vindo ao Estude Aqui</h1>
+                <form onsubmit="handleLogin(event)">
+                    <input type="email" id="loginEmail" placeholder="Email" required>
+                    <input type="password" id="loginPassword" placeholder="Senha" required>
+                    <button type="submit" class="btn btn-primary">Entrar</button>
+                </form>
+                <p>Não tem conta? <a href="#" onclick="navigateTo('signup'); return false;">Criar conta</a></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SIGNUP SCREEN -->
+    <section id="signup" class="screen">
+        <div class="auth-container">
+            <div class="auth-box">
+                <h1>Criar Conta</h1>
+                <form onsubmit="handleSignup(event)">
+                    <input type="text" id="signupName" placeholder="Nome completo" required>
+                    <input type="email" id="signupEmail" placeholder="Email" required>
+                    <input type="password" id="signupPassword" placeholder="Senha" required>
+                    <button type="submit" class="btn btn-primary">Criar Conta</button>
+                </form>
+                <p>Já tem conta? <a href="#" onclick="navigateTo('login'); return false;">Fazer login</a></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- DASHBOARD SCREEN -->
+    <section id="dashboard" class="screen">
+        <div class="container">
+            <div class="dashboard-header">
+                <h1>Olá, <span id="dashboardUserName">Visitante</span>!</h1>
+                <p>Seu progresso de estudos</p>
+            </div>
+
+            <div class="dashboard-grid">
+                <div class="dashboard-card">
+                    <h3>📊 Progresso</h3>
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progressFill"></div>
+                    </div>
+                    <p id="progressText">0% completo</p>
+                </div>
+
+                <div class="dashboard-card">
+                    <h3>⭐ Favoritos</h3>
+                    <div id="favoritosList">
+                        <p>Nenhum favorito ainda</p>
+                    </div>
+                </div>
+
+                <div class="dashboard-card">
+                    <h3>📖 Últimos Acessos</h3>
+                    <div id="historicoList">
+                        <p>Nenhum acesso ainda</p>
+                    </div>
+                </div>
+
+                <div class="dashboard-card">
+                    <h3>🎯 Continuar Estudando</h3>
+                    <button class="btn btn-primary" id="btnContinuar" onclick="continuarEstudando()">
+                        Continuar
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAVORITOS SCREEN -->
+    <section id="favoritos" class="screen">
+        <div class="container">
+            <button class="btn-back" onclick="navigateTo('dashboard')">← Voltar</button>
+            <h1>⭐ Meus Favoritos</h1>
+            <div id="favoritosContent" class="cards-grid"></div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Estude Aqui. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
