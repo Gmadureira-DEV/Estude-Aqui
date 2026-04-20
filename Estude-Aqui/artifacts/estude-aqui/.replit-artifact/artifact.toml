@@ -1,0 +1,31 @@
+kind = "web"
+previewPath = "/"
+title = "Estude Aqui"
+version = "1.0.0"
+id = "artifacts/estude-aqui"
+router = "path"
+
+[[integratedSkills]]
+name = "react-vite"
+version = "1.0.0"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 18466
+
+[services.development]
+run = "pnpm --filter @workspace/estude-aqui run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/estude-aqui", "run", "build" ]
+publicDir = "artifacts/estude-aqui/dist/public"
+serve = "static"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "18466"
+BASE_PATH = "/"
